@@ -12,14 +12,14 @@ public class ValidarPositivo {
             int numero = scanner.nextInt();
             
             if (numero < 0) {
-                // Nosotros mismos lanzamos la excepción si no nos gusta el número
-                throw new Exception("El número no puede ser negativo. Ingresaste: " + numero);
+                // Cambiamos Exception por IllegalArgumentException
+                throw new IllegalArgumentException("El número no puede ser negativo. Ingresaste: " + numero);
             }
             
             System.out.println("¡Excelente! Ingresaste el número positivo: " + numero);
             
-        } catch (Exception e) {
-            // Aquí atrapamos la excepción que nosotros mismos lanzamos arriba
+        } catch (IllegalArgumentException e) { 
+            // Asegúrate de cambiarlo en el catch también
             System.out.println("¡Error de validación! " + e.getMessage());
         }
         
